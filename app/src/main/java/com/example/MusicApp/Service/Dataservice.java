@@ -6,6 +6,7 @@ import com.example.MusicApp.Model.ChuDe;
 import com.example.MusicApp.Model.NgheSi;
 import com.example.MusicApp.Model.PhoBien;
 import com.example.MusicApp.Model.Playlist;
+import com.example.MusicApp.Model.Quangcao;
 import com.example.MusicApp.Model.ThinhHanh;
 
 import java.util.List;
@@ -17,6 +18,10 @@ import retrofit2.http.GET;
 import retrofit2.http.POST;
 
 public interface Dataservice {
+
+    @GET("quangcaocurrent.php")
+    Call<List<Quangcao>> GetQuangCao();
+
     @GET("playlistcurrentday.php")
     Call<List<Playlist>> GetPlaylistCurrentDay();
 

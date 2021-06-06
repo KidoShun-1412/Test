@@ -1,6 +1,7 @@
 package com.example.MusicApp.Activity;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
 import androidx.viewpager.widget.ViewPager;
 
 import android.content.Intent;
@@ -20,6 +21,7 @@ import android.widget.SeekBar;
 import android.widget.TextView;
 
 import com.example.MusicApp.Adapter.ViewPagerDiaNhac;
+import com.example.MusicApp.Fragment.Fragment_Play_Danh_Sach_Cac_Bai_Hat;
 import com.example.MusicApp.Fragment.Fragment_dia_nhac;
 import com.example.MusicApp.Model.BaiHat;
 import com.example.MusicApp.R;
@@ -47,6 +49,7 @@ public class PlayNhacActivity extends AppCompatActivity {
     public static ArrayList<BaiHat> mangbaihat = new ArrayList<BaiHat>();
 
     Fragment_dia_nhac fragment_dia_nhac;
+    Fragment_Play_Danh_Sach_Cac_Bai_Hat fragment_play_danh_sach_cac_bai_hat;
     public static ViewPagerDiaNhac adapternhac;
 
     @Override
@@ -280,8 +283,10 @@ public class PlayNhacActivity extends AppCompatActivity {
         textViewrunrime = findViewById(R.id.textViewruntime);
 
         fragment_dia_nhac = new Fragment_dia_nhac();
+        fragment_play_danh_sach_cac_bai_hat = new Fragment_Play_Danh_Sach_Cac_Bai_Hat();
         adapternhac = new ViewPagerDiaNhac(getSupportFragmentManager());
         adapternhac.AddFragment(fragment_dia_nhac);
+        adapternhac.AddFragment( fragment_play_danh_sach_cac_bai_hat);
         viewPagerplaynhac.setAdapter(adapternhac);
         setSupportActionBar(toolbarplaynhac);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);

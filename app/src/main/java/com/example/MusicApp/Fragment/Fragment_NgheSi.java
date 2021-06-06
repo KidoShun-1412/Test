@@ -1,6 +1,7 @@
 package com.example.MusicApp.Fragment;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -48,6 +49,8 @@ public class Fragment_NgheSi extends Fragment {
             @Override
             public void onResponse(Call<List<NgheSi>> call, Response<List<NgheSi>> response) {
                 ArrayList<NgheSi> mangnghesi = (ArrayList<NgheSi>) response.body();
+//                Log.d("ssss",mangnghesi.get(0).getTenNgheSi());
+//                Log.d("aaaa","ditmmmeememngheshi");
                 ngheSiAdapter = new NgheSiAdapter(getActivity(), mangnghesi);
 
                 LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getActivity());

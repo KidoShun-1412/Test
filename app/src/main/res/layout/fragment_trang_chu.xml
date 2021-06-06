@@ -10,6 +10,12 @@
         android:id="@+id/linearlayout"
         android:orientation="vertical">
         <fragment
+            android:name="com.example.MusicApp.Fragment.Fragment_Banner"
+            android:id="@+id/fragmentbanner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        </fragment>
+        <fragment
             android:name="com.example.MusicApp.Fragment.Fragment_Playlist"
             android:id="@+id/fragmentplaylist"
             android:layout_width="match_parent"

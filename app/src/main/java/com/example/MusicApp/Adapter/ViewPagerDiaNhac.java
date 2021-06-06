@@ -11,8 +11,7 @@ public class ViewPagerDiaNhac extends FragmentPagerAdapter {
 
     public final ArrayList<Fragment> fragments = new ArrayList<>();
 
-    public ViewPagerDiaNhac(@NonNull FragmentManager fm) {
-        super(fm);
+    public ViewPagerDiaNhac(@NonNull FragmentManager fm) { super(fm);
     }
 
     @NonNull

@@ -22,6 +22,24 @@
             android:layout_height="wrap_content">
         </fragment>
         <fragment
+            android:name="com.example.MusicApp.Fragment.Fragment_ChuDeTheLoai"
+            android:id="@+id/fragmentchude"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        </fragment>
+        <fragment
+            android:name="com.example.MusicApp.Fragment.Fragment_Album_Hot"
+            android:id="@+id/fragmentalbumhot"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        </fragment>
+        <fragment
+            android:name="com.example.MusicApp.Fragment.Fragment_Bai_Hat_Hot"
+            android:id="@+id/fragmentbaihathot"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        </fragment>
+        <fragment
             android:name="com.example.MusicApp.Fragment.Fragment_NgheSi"
             android:id="@+id/fragmentnghesi"
             android:layout_width="match_parent"
@@ -33,121 +51,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
         </fragment>
-        <fragment
-            android:name="com.example.MusicApp.Fragment.Fragment_PhoBien"
-            android:id="@+id/fragmentphobien"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-        </fragment>
 
-        <fragment
-            android:name="com.example.MusicApp.Fragment.Fragment_ChuDe"
-            android:id="@+id/fragmentchude"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-        </fragment>
-<!--        <fragment-->
-<!--            android:name="com.example.btl_music4b.Fragment.Fragment_BangXepHang"-->
-<!--            android:id="@+id/fragmentbangxephang"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content">-->
-<!--        </fragment>-->
-<!--        <fragment-->
-<!--            android:name="com.example.btl_music4b.Fragment.Fragment_ThinhHanh"-->
-<!--            android:id="@+id/fragmentthinhhanh1"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content">-->
-<!--        </fragment>-->
-<!--        <fragment-->
-<!--            android:name="com.example.btl_music4b.Fragment.Fragment_ChuDe"-->
-<!--            android:id="@+id/fragmentchude1"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content">-->
-<!--        </fragment>-->
-<!--        <fragment-->
-<!--            android:name="com.example.btl_music4b.Fragment.Fragment_BangXepHang"-->
-<!--            android:id="@+id/fragmentbangxephang1"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content">-->
-<!--        </fragment>-->
-<!--        <fragment-->
-<!--            android:name="com.example.btl_music4b.Fragment.Fragment_PhoBien"-->
-<!--            android:id="@+id/fragmentphobien1"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content">-->
-<!--        </fragment>-->
-<!--        <fragment-->
-<!--            android:name="com.example.btl_music4b.Fragment.Fragment_ChuDe"-->
-<!--            android:id="@+id/fragmentchude2"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content">-->
-<!--        </fragment>-->
-<!--        <fragment-->
-<!--            android:name="com.example.btl_music4b.Fragment.Fragment_BangXepHang"-->
-<!--            android:id="@+id/fragmentbangxephang2"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content">-->
-<!--        </fragment>-->
-<!--        <fragment-->
-<!--            android:name="com.example.btl_music4b.Fragment.Fragment_PhoBien"-->
-<!--            android:id="@+id/fragmentphobien2"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content">-->
-<!--        </fragment>-->
-<!--        <fragment-->
-<!--            android:name="com.example.btl_music4b.Fragment.Fragment_ChuDe"-->
-<!--            android:id="@+id/fragmentchude5"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content">-->
-<!--        </fragment>-->
-<!--        <fragment-->
-<!--            android:name="com.example.btl_music4b.Fragment.Fragment_BangXepHang"-->
-<!--            android:id="@+id/fragmentbangxephang5"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content">-->
-<!--        </fragment>-->
-<!--        <fragment-->
-<!--            android:name="com.example.btl_music4b.Fragment.Fragment_ThinhHanh"-->
-<!--            android:id="@+id/fragmentthinhhanh4"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content">-->
-<!--        </fragment>-->
-<!--        <fragment-->
-<!--            android:name="com.example.btl_music4b.Fragment.Fragment_ChuDe"-->
-<!--            android:id="@+id/fragmentchude4"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content">-->
-<!--        </fragment>-->
-<!--        <fragment-->
-<!--            android:name="com.example.btl_music4b.Fragment.Fragment_BangXepHang"-->
-<!--            android:id="@+id/fragmentbangxephang4"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content">-->
-<!--        </fragment>-->
-<!--        <fragment-->
-<!--            android:name="com.example.btl_music4b.Fragment.Fragment_PhoBien"-->
-<!--            android:id="@+id/fragmentphobien4"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content">-->
-<!--        </fragment>-->
-<!--        <fragment-->
-<!--            android:name="com.example.btl_music4b.Fragment.Fragment_ChuDe"-->
-<!--            android:id="@+id/fragmentchude3"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content">-->
-<!--        </fragment>-->
-<!--        <fragment-->
-<!--            android:name="com.example.btl_music4b.Fragment.Fragment_BangXepHang"-->
-<!--            android:id="@+id/fragmentbangxephang3"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content">-->
-<!--        </fragment>-->
-<!--        <fragment-->
-<!--            android:name="com.example.btl_music4b.Fragment.Fragment_PhoBien"-->
-<!--            android:id="@+id/fragmentphobien3"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content">-->
-<!--        </fragment>-->
+
+
     </LinearLayout>
 
 </ScrollView>

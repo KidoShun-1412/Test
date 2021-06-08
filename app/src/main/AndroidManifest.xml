@@ -11,10 +11,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="com.example.MusicApp.Activity.HomeActivity"></activity>
-        <activity android:name="com.example.MusicApp.Activity.PlayNhacActivity" />
-        <activity android:name="com.example.MusicApp.Activity.DanhsachbaihatActivity" />
-        <activity android:name="com.example.MusicApp.Activity.MainActivity">
+        <activity android:name=".Activity.DanhsachcacplaylistActivity"></activity>
+        <activity android:name=".Activity.DanhsachtatcaalbumActivity" />
+        <activity android:name=".Activity.DanhsachtheloaitheochudeActivity" />
+        <activity android:name=".Activity.DanhsachtatcachudeActivity" />
+        <activity android:name=".Activity.HomeActivity" />
+        <activity android:name=".Activity.PlayNhacActivity" />
+        <activity android:name=".Activity.DanhsachbaihatActivity" />
+        <activity android:name=".Activity.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

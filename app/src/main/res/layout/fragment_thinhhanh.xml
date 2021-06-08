@@ -9,10 +9,10 @@
     <TextView
         android:id="@+id/txtthinhhanh"
         android:layout_marginLeft="10dp"
-        android:layout_marginTop="67dp"
+        android:layout_marginTop="50dp"
         android:fontFamily="@font/arimo_bold"
         android:text="Thịnh Hành"
-        android:textColor="#FFFFFF"
+        android:textColor="#EC97B1"
         android:textSize="28sp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

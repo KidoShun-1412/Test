@@ -1,30 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content">
 
-    <TextView
-        android:id="@+id/txtchude"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="67dp"
-        android:fontFamily="@font/arimo_bold"
-        android:text="Chủ Đề"
-        android:textColor="#FFFFFF"
-        android:textSize="28sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <RelativeLayout
+        android:padding="7dp"
+        android:id="@+id/relativechudevatheloai"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:textColor="#EC97B1"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:text="Chủ Đề và Thể Loại"
+            android:id="@+id/textviewtitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:id="@+id/textviewxemthem"
+            android:layout_alignParentRight="true"
+            android:textColor="#913667"
+            android:textSize="18sp"
+            android:text="Xem Thêm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    </RelativeLayout>
+    <HorizontalScrollView
+        android:scrollbars="none"
+        android:id="@+id/horizontalScrollview"
+        android:layout_below="@+id/relativechudevatheloai"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerviewchude"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtchude" />
+    </HorizontalScrollView>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</RelativeLayout>

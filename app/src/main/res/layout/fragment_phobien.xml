@@ -11,10 +11,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="10dp"
-        android:layout_marginTop="67dp"
+        android:layout_marginTop="50dp"
         android:fontFamily="@font/arimo_bold"
         android:text="Phổ Biến"
-        android:textColor="#FFFFFF"
+        android:textColor="#EC97B1"
         android:textSize="28sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

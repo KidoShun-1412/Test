@@ -1,12 +1,15 @@
 package com.example.MusicApp.Service;
 
+import com.example.MusicApp.Model.Album;
 import com.example.MusicApp.Model.BaiHat;
 import com.example.MusicApp.Model.BangXepHang;
 import com.example.MusicApp.Model.ChuDe;
+import com.example.MusicApp.Model.Chudevatheloai;
 import com.example.MusicApp.Model.NgheSi;
 import com.example.MusicApp.Model.PhoBien;
 import com.example.MusicApp.Model.Playlist;
 import com.example.MusicApp.Model.Quangcao;
+import com.example.MusicApp.Model.TheLoai;
 import com.example.MusicApp.Model.ThinhHanh;
 
 import java.util.List;
@@ -25,6 +28,9 @@ public interface Dataservice {
     @GET("playlistcurrentday.php")
     Call<List<Playlist>> GetPlaylistCurrentDay();
 
+    @GET("danhsachplaylist.php")
+    Call<List<Playlist>> GetDanhSachPlaylist();
+
     @GET("nghesicurrent.php")
     Call<List<NgheSi>> GetNgheSiCurrent();
 
@@ -35,10 +41,22 @@ public interface Dataservice {
     Call<List<PhoBien>> GetPhoBienCurrent();
 
     @GET("chudecurrent.php")
-    Call<List<ChuDe>> GetChuDeCurrent();
+    Call<List<ChuDe>> GetAllChuDe();
 
     @GET("bangxephangcurrent.php")
     Call<List<BangXepHang>> GetBangXepHangCurrent();
+
+    @GET("chudevatheloaicurrent.php")
+    Call<Chudevatheloai> GetChudeTheLoai();
+
+    @GET("albumhot.php")
+    Call <List<Album>> GetAlbumhot();
+
+    @GET("tatcaalbum.php")
+    Call <List<Album>> GetAllAlbum();
+
+    @GET("baihatduocthich.php")
+    Call <List<BaiHat>> GetBaiHatYeuThich();
 
     @FormUrlEncoded
     @POST("danhsachbaihat.php")
@@ -62,10 +80,22 @@ public interface Dataservice {
 
     @FormUrlEncoded
     @POST("danhsachbaihat.php")
+    Call<List<BaiHat>> GetDanhsachbaihattheloai(@Field("idtheloai") String id);
+
+    @FormUrlEncoded
+    @POST("danhsachbaihat.php")
     Call<List<BaiHat>> GetDanhsachbaihatbangxephang(@Field("idbangxephang") String id);
 
     @FormUrlEncoded
     @POST("timkiembaihat.php")
     Call<List<BaiHat>> GetTimKiembaihat(@Field("tukhoa") String tukhoa);
+
+    @FormUrlEncoded
+    @POST("danhsachbaihat.php")
+    Call<List<BaiHat>> GetDanhSachBaiHatTheoQuangCao(@Field("idquangcao") String idquangcao);
+
+    @FormUrlEncoded
+    @POST("theloaitheochude.php")
+    Call<List<TheLoai>> GetDanhSachTheLoaiTheoChuDe(@Field("idchude") String idchude);
 
 }

@@ -8,7 +8,7 @@
 
     <TextView
         android:id="@+id/txtnghesi"
-        android:layout_marginTop="67dp"
+        android:layout_marginTop="50dp"
         android:layout_marginLeft="10dp"
         android:fontFamily="@font/arimo_bold"
         android:text="Danh Sách Nghệ Sĩ"

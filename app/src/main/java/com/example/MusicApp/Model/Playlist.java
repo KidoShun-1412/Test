@@ -16,6 +16,10 @@ public class Playlist implements Serializable {
     @Expose
     private String hinhPlaylist;
 
+    @SerializedName("HinhIcon")
+    @Expose
+    private String hinhicon;
+
 
 
     public String getIdPlaylist() {
@@ -40,6 +44,14 @@ public class Playlist implements Serializable {
 
     public void setHinhPlaylist(String hinhPlaylist) {
         this.hinhPlaylist = hinhPlaylist;
+    }
+
+    public String getHinhIcon() {
+        return hinhicon;
+    }
+
+    public void setHinhIcon(String hinhIcon) {
+        this.hinhicon = hinhicon;
     }
 
 }

@@ -15,7 +15,7 @@ tools:context=".Activity.MainActivity">
     android:layout_height="wrap_content"
     android:layout_weight="10">
     <View
-        android:background="#FFF"
+        android:background="#fff"
         android:layout_width="match_parent"
         android:layout_height="100dp"/>
 </androidx.viewpager.widget.ViewPager>

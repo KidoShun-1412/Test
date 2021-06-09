@@ -62,20 +62,20 @@ public class PlayNhacActivity extends AppCompatActivity {
         StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
         StrictMode.setThreadPolicy(policy);
         enventClick();
-        imageViewtim.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if (dem == 0){
-                    Animation animation = AnimationUtils.loadAnimation(PlayNhacActivity.this, R.anim.anim_timclick);
-                    imageViewtim.setImageResource(R.drawable.iconloved);
-                    view.startAnimation(animation);
-                    dem++;
-                }else {
-                    imageViewtim.setImageResource(R.drawable.iconlove);
-                    dem--;
-                }
-            }
-        });
+//        imageViewtim.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                if (dem == 0){
+//                    Animation animation = AnimationUtils.loadAnimation(PlayNhacActivity.this, R.anim.anim_timclick);
+//                    imageViewtim.setImageResource(R.drawable.iconloved);
+//                    view.startAnimation(animation);
+//                    dem++;
+//                }else {
+//                    imageViewtim.setImageResource(R.drawable.iconlove);
+//                    dem--;
+//                }
+//            }
+//        });
     }
 
     private void enventClick() {
@@ -271,7 +271,7 @@ public class PlayNhacActivity extends AppCompatActivity {
         toolbarplaynhac = findViewById(R.id.toolbarplaynhac);
         seekBarnhac = findViewById(R.id.seekBartime);
         viewPagerplaynhac = findViewById(R.id.viewPagerdianhac);
-        imageViewtim = findViewById(R.id.imageViewtimplaynhac);
+        //imageViewtim = findViewById(R.id.imageViewtimplaynhac);
         imageButtontronnhac = findViewById(R.id.imageButtontron);
         imageButtonpreviewnhac = findViewById(R.id.imageButtonpreview);
         imageButtonplaypausenhac = findViewById(R.id.imageButtonplaypause);

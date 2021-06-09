@@ -43,13 +43,13 @@ public class HomeActivity extends AppCompatActivity {
         mainViewPagerAdapter.addFragment(new Fragment_Trang_Chu(), "");
         mainViewPagerAdapter.addFragment(new Fragment_Tim_Kiem(), "");
         mainViewPagerAdapter.addFragment(new Fragment_Thu_Vien(), "");
-        mainViewPagerAdapter.addFragment(new Fragment_Profile(), "");
+        //mainViewPagerAdapter.addFragment(new Fragment_Profile(), "");
         viewPager.setAdapter(mainViewPagerAdapter);
         tabLayout.setupWithViewPager(viewPager);
         tabLayout.getTabAt(0).setIcon(R.drawable.icontrangchu);
         tabLayout.getTabAt(1).setIcon(R.drawable.icontimkiem);
         tabLayout.getTabAt(2).setIcon(R.drawable.iconthuvien);
-        tabLayout.getTabAt(3).setIcon(R.drawable.iconlogo);
+//        tabLayout.getTabAt(3).setIcon(R.drawable.iconlogo);
     }
 
     private void AnhXa() {

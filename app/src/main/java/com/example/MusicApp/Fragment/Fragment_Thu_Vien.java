@@ -29,8 +29,8 @@ public class Fragment_Thu_Vien extends Fragment {
     private void init() {
         ViewPagerThuVien viewPagerThuVien = new ViewPagerThuVien(getChildFragmentManager());
         viewPagerThuVien.addFragment(new Fragment_ThuVien_Playlist(), "Playlist");
-        viewPagerThuVien.addFragment(new Fragment_ThuVien_NgheSi(), "Nghệ sĩ");
-        viewPagerThuVien.addFragment(new Fragment_ThuVien_Album(), "Album");
+//        viewPagerThuVien.addFragment(new Fragment_ThuVien_NgheSi(), "Nghệ sĩ");
+//        viewPagerThuVien.addFragment(new Fragment_ThuVien_Album(), "Album");
         viewPager.setAdapter(viewPagerThuVien);
         tabLayout.setupWithViewPager(viewPager);
     }

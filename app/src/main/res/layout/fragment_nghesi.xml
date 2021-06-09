@@ -12,7 +12,7 @@
         android:layout_marginLeft="10dp"
         android:fontFamily="@font/arimo_bold"
         android:text="Danh Sách Nghệ Sĩ"
-        android:textColor="#FFFFFF"
+        android:textColor="#EC97B1"
         android:textSize="28sp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

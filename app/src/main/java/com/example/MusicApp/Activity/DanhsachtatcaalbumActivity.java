@@ -2,11 +2,13 @@ package com.example.MusicApp.Activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 import android.view.View;
 
+import com.example.MusicApp.Adapter.AllAlbumAdapter;
 import com.example.MusicApp.Model.Album;
 import com.example.MusicApp.R;
 import com.example.MusicApp.Service.APIService;
@@ -22,6 +24,7 @@ import retrofit2.Response;
 public class DanhsachtatcaalbumActivity extends AppCompatActivity {
     RecyclerView recyclerViewAllalbum;
     Toolbar toolbarallalbum;
+    AllAlbumAdapter allAlbumAdapter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,6 +40,9 @@ public class DanhsachtatcaalbumActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call<List<Album>> call, Response<List<Album>> response) {
                 ArrayList<Album> mangalbum = (ArrayList<Album>) response.body();
+                allAlbumAdapter= new AllAlbumAdapter(DanhsachtatcaalbumActivity.this,mangalbum);
+                recyclerViewAllalbum.setLayoutManager(new GridLayoutManager(DanhsachtatcaalbumActivity.this,2));
+                recyclerViewAllalbum.setAdapter(allAlbumAdapter);
             }
 
             @Override

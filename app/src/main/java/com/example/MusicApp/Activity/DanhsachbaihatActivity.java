@@ -19,13 +19,11 @@ import android.widget.TextView;
 import com.example.MusicApp.Adapter.DanhsachbaihatAdapter;
 import com.example.MusicApp.Model.Album;
 import com.example.MusicApp.Model.BaiHat;
-import com.example.MusicApp.Model.BangXepHang;
 import com.example.MusicApp.Model.ChuDe;
 import com.example.MusicApp.Model.NgheSi;
 import com.example.MusicApp.Model.Playlist;
 import com.example.MusicApp.Model.Quangcao;
 import com.example.MusicApp.Model.TheLoai;
-import com.example.MusicApp.Model.ThinhHanh;
 import com.example.MusicApp.R;
 import com.example.MusicApp.Service.APIService;
 import com.example.MusicApp.Service.Dataservice;
@@ -53,9 +51,8 @@ public class DanhsachbaihatActivity extends AppCompatActivity {
     Playlist playlist = null;
     NgheSi ngheSi = null;
 
-    ThinhHanh thinhHanh = null;
+
     ChuDe chuDe = null;
-    BangXepHang bangXepHang = null;
     Quangcao quangcao = null;
     ImageView imgdanhsachcakhuc;
     ArrayList<BaiHat> mangbaihat;
@@ -84,7 +81,7 @@ public class DanhsachbaihatActivity extends AppCompatActivity {
             getSupportActionBar().setTitle(quangcao.getTenBaiHat());
         }
         if (playlist != null && !playlist.equals("")){
-            setValueInView(playlist.getTen(), playlist.getHinhPlaylist());
+            setValueInView(playlist.getTen(), playlist.getHinhIcon());
             GetDataPlaylist(playlist.getIdPlaylist());
             txtcollapsing.setText(playlist.getTen());
             getSupportActionBar().setTitle(playlist.getTen());
@@ -96,12 +93,6 @@ public class DanhsachbaihatActivity extends AppCompatActivity {
             getSupportActionBar().setTitle(theLoai.getTenTheLoai());
         }
 
-        if (thinhHanh != null && !thinhHanh.equals("")){
-            setValueInView(thinhHanh.getTenThinhHanh(), thinhHanh.getHinhThinhHanh());
-            GetDataThinhHanh(thinhHanh.getIdThinhHanh());
-            txtcollapsing.setText(thinhHanh.getTenThinhHanh());
-            getSupportActionBar().setTitle(thinhHanh.getTenThinhHanh());
-        }
 
         if (chuDe != null && !chuDe.equals("")){
             setValueInView(chuDe.getTenChuDe(), chuDe.getHinhChuDe());
@@ -109,12 +100,7 @@ public class DanhsachbaihatActivity extends AppCompatActivity {
             txtcollapsing.setText(chuDe.getTenChuDe());
             getSupportActionBar().setTitle(chuDe.getTenChuDe());
         }
-        if (bangXepHang != null && !bangXepHang.equals("")){
-            setValueInView(bangXepHang.getTenBangXepHang(), bangXepHang.getHinhBangXepHang());
-            GetDataBangXepHang(bangXepHang.getIdBangXepHang());
-            txtcollapsing.setText(bangXepHang.getTenBangXepHang());
-            getSupportActionBar().setTitle(bangXepHang.getTenBangXepHang());
-        }
+
         if (album != null && !album.getTenAlbum().equals("")){
             setValueInView(album.getTenAlbum(), album.getHinhanhAlbum());
             GetDataAlbum(album.getIdAlbum());
@@ -275,24 +261,7 @@ public class DanhsachbaihatActivity extends AppCompatActivity {
         });
     }
 
-    private void GetDataThinhHanh(String id) {
-        Dataservice dataservice = APIService.getService();
-        Call<List<BaiHat>> callback = dataservice.GetDanhsachbaihatthinhhanh(id);
-        callback.enqueue(new Callback<List<BaiHat>>() {
-            @Override
-            public void onResponse(Call<List<BaiHat>> call, Response<List<BaiHat>> response) {
-                mangbaihat = (ArrayList<BaiHat>) response.body();
-                danhsachbaihatAdapter = new DanhsachbaihatAdapter(DanhsachbaihatActivity.this, mangbaihat);
-                recyclerViewdanhsachbaihat.setLayoutManager(new LinearLayoutManager(DanhsachbaihatActivity.this));
-                recyclerViewdanhsachbaihat.setAdapter(danhsachbaihatAdapter);
-            }
 
-            @Override
-            public void onFailure(Call<List<BaiHat>> call, Throwable t) {
-
-            }
-        });
-    }
 
     private void AnhXa() {
         coordinatorLayout = findViewById(R.id.coordinatorlayout);
@@ -329,14 +298,8 @@ public class DanhsachbaihatActivity extends AppCompatActivity {
             if (intent.hasExtra("intentnghesi")){
                 ngheSi = (NgheSi) intent.getSerializableExtra("intentnghesi");
             }else
-            if (intent.hasExtra("intentthinhhanh")){
-                thinhHanh = (ThinhHanh) intent.getSerializableExtra("intentthinhhanh");
-            }else
             if (intent.hasExtra("intentchude")){
                 chuDe = (ChuDe) intent.getSerializableExtra("intentchude");
-            }else
-            if (intent.hasExtra("intentbangxephang")){
-                bangXepHang = (BangXepHang) intent.getSerializableExtra("intentbangxephang");
             }
             else
             if(intent.hasExtra("banner")){

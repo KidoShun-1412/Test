@@ -38,7 +38,7 @@ public class DanhsachcacplaylistAdapter extends  RecyclerView.Adapter<Danhsachca
     @Override
     public void onBindViewHolder(@NonNull DanhsachcacplaylistAdapter.ViewHolder holder, int position) {
         Playlist playlist = mangplaylist.get(position);
-        Picasso.with(context).load(playlist.getHinhPlaylist()).into(holder.imghinhnen);
+        Picasso.with(context).load(playlist.getHinhIcon()).into(holder.imghinhnen);
         holder.txttenplaylist.setText(playlist.getTen());
     }
 

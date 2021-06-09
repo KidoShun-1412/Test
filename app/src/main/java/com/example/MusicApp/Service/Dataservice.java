@@ -2,14 +2,12 @@ package com.example.MusicApp.Service;
 
 import com.example.MusicApp.Model.Album;
 import com.example.MusicApp.Model.BaiHat;
-import com.example.MusicApp.Model.BangXepHang;
 import com.example.MusicApp.Model.ChuDe;
 import com.example.MusicApp.Model.Chudevatheloai;
 import com.example.MusicApp.Model.NgheSi;
 import com.example.MusicApp.Model.Playlist;
 import com.example.MusicApp.Model.Quangcao;
 import com.example.MusicApp.Model.TheLoai;
-import com.example.MusicApp.Model.ThinhHanh;
 
 import java.util.List;
 
@@ -33,16 +31,14 @@ public interface Dataservice {
     @GET("nghesicurrent.php")
     Call<List<NgheSi>> GetNgheSiCurrent();
 
-    @GET("thinhhanhcurrent.php")
-    Call<List<ThinhHanh>> GetThinhHanhCurrent();
+
 
 
 
     @GET("chudecurrent.php")
     Call<List<ChuDe>> GetAllChuDe();
 
-    @GET("bangxephangcurrent.php")
-    Call<List<BangXepHang>> GetBangXepHangCurrent();
+
 
     @GET("chudevatheloaicurrent.php")
     Call<Chudevatheloai> GetChudeTheLoai();
@@ -64,9 +60,6 @@ public interface Dataservice {
     @POST("danhsachbaihat.php")
     Call<List<BaiHat>> GetDanhsachbaihatnghesi(@Field("idnghesi") String id);
 
-    @FormUrlEncoded
-    @POST("danhsachbaihat.php")
-    Call<List<BaiHat>> GetDanhsachbaihatthinhhanh(@Field("idthinhhanh") String id);
 
 
 

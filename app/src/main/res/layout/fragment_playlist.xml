@@ -33,7 +33,7 @@
         android:paddingTop="10dp"
         android:paddingBottom="10dp"
         android:layout_marginBottom="8dp"
-        android:textColor="#0a0a0a"
+        android:textColor="#404040"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 

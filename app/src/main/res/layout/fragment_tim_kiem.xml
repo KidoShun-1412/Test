@@ -25,7 +25,7 @@
             android:theme="?attr/actionBarTheme"
             app:collapseIcon="?attr/actionModeCloseDrawable"
             app:title="Tìm bài hát, tìm người yêu..."
-            app:titleTextColor="@color/cardview_dark_background" />
+            app:titleTextColor="@color/colortimkiem" />
     </com.google.android.material.appbar.AppBarLayout>
 
     <androidx.recyclerview.widget.RecyclerView

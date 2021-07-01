@@ -1,10 +1,16 @@
 package com.example.MusicApp.Activity;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.NotificationCompat;
 import androidx.fragment.app.Fragment;
 import androidx.viewpager.widget.ViewPager;
-
+import android.support.v4.media.session.MediaSessionCompat;
+import android.app.Notification;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.media.AudioManager;
 import android.media.MediaPlayer;
@@ -24,12 +30,22 @@ import com.example.MusicApp.Adapter.ViewPagerDiaNhac;
 import com.example.MusicApp.Fragment.Fragment_Play_Danh_Sach_Cac_Bai_Hat;
 import com.example.MusicApp.Fragment.Fragment_dia_nhac;
 import com.example.MusicApp.Model.BaiHat;
+import com.example.MusicApp.NotificationBackGround.MusicService;
+import com.example.MusicApp.NotificationBackGround.NotificationReceiver;
 import com.example.MusicApp.R;
 
 import java.io.IOException;
+import java.io.InputStream;
+import java.net.HttpURLConnection;
+import java.net.URL;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Random;
+
+import static com.example.MusicApp.NotificationBackGround.ApplicationClass.ACTION_NEXT;
+import static com.example.MusicApp.NotificationBackGround.ApplicationClass.ACTION_PLAY;
+import static com.example.MusicApp.NotificationBackGround.ApplicationClass.ACTION_PREV;
+import static com.example.MusicApp.NotificationBackGround.ApplicationClass.CHANNEL_ID_2;
 
 public class PlayNhacActivity extends AppCompatActivity {
     //private CircleLineVisualizer mVisualizer;
@@ -47,6 +63,8 @@ public class PlayNhacActivity extends AppCompatActivity {
     boolean checkrandom = false;
     boolean next = false;
     public static ArrayList<BaiHat> mangbaihat = new ArrayList<BaiHat>();
+    MusicService musicService;
+    MediaSessionCompat mediaSessionCompat;
 
     Fragment_dia_nhac fragment_dia_nhac;
     Fragment_Play_Danh_Sach_Cac_Bai_Hat fragment_play_danh_sach_cac_bai_hat;
@@ -421,5 +439,57 @@ public class PlayNhacActivity extends AppCompatActivity {
                 }
             }
         }, 1000);
+    }
+    private void showNotification(int playPauseBtn)
+    {
+
+        Intent intent = new Intent(this,PlayNhacActivity.class);
+        PendingIntent contentIntent = PendingIntent.getActivity(this,0,intent,0);
+        Intent prevIntent = new Intent(this, NotificationReceiver.class).setAction(ACTION_PREV);
+        PendingIntent prevPendingIntent = PendingIntent.getBroadcast(this,0,prevIntent,
+                PendingIntent.FLAG_UPDATE_CURRENT);
+        Intent playIntent = new Intent(this, NotificationReceiver.class).setAction(ACTION_PLAY);
+        PendingIntent playPendingIntent = PendingIntent.getBroadcast(this,0,playIntent,
+                PendingIntent.FLAG_UPDATE_CURRENT);
+        Intent nextIntent = new Intent(this, NotificationReceiver.class).setAction(ACTION_NEXT);
+        PendingIntent nextPendingIntent = PendingIntent.getBroadcast(this,0,nextIntent,
+                PendingIntent.FLAG_UPDATE_CURRENT);
+
+
+        Bitmap picture1= getBitmapFromURL(mangbaihat.get(position).getHinhBaiHat());
+
+        Notification notification = new NotificationCompat.Builder(this,CHANNEL_ID_2)
+                .setSmallIcon(R.drawable.musicfile2)
+                .setLargeIcon(picture1)
+                .setContentTitle(mangbaihat.get(position).getTenBaiHat())
+                .setContentText(mangbaihat.get(position).getTenCaSi())
+                .setVisibility(NotificationCompat.VISIBILITY_PUBLIC)
+                .addAction(R.drawable.ic_baseline_skip_previous_36,"previous",prevPendingIntent)
+                .addAction(playPauseBtn,"play",playPendingIntent)
+                .addAction(R.drawable.ic_baseline_skip_next_36,"next",nextPendingIntent)
+                .setStyle(new androidx.media.app.NotificationCompat.MediaStyle()
+                        .setShowActionsInCompactView(0,1,2)
+                        .setMediaSession(mediaSessionCompat.getSessionToken()))
+                .setPriority(NotificationCompat.PRIORITY_LOW)
+                .setContentIntent(contentIntent)
+                .setOnlyAlertOnce(true)
+                .build();
+        NotificationManager notificationManager =(NotificationManager)
+                getSystemService(NOTIFICATION_SERVICE);
+        notificationManager.notify(0,notification);
+    }
+    public static Bitmap getBitmapFromURL(String src) {
+        try {
+            URL url = new URL(src);
+            HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+            connection.setDoInput(true);
+            connection.connect();
+            InputStream input = connection.getInputStream();
+            Bitmap myBitmap = BitmapFactory.decodeStream(input);
+            return myBitmap;
+        } catch (IOException e) {
+            // Log exception
+            return null;
+        }
     }
 }
